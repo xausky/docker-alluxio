@@ -2,21 +2,19 @@
 
 Alluxio, formerly Tachyon, Memory Speed Virtual Distributed Storage System. See [http://www.alluxio.org/](http://www.alluxio.org/) for more detail.
 
-## About this image
-
-Built from `jre-alpine`, So it is very lightweight!
 
 ## Quick Start 
 
-```bash
-docker build -t krystism/alluxio .
-docker run --rm -t -i krystism/alluxio bash
+1.clone this
+
+2.create docker network
+
+```
+docker network create --driver bridge main
 ```
 
-You can also expose port `22` and `19999` as follows:
+3.startup alluxio
 
-```bash
-docker run -t -i -d -p 2222:22 -p 19999:19999 krystism/alluxio bash
 ```
-
-The root password is `alluxio`.
+docker-compose up
+```
