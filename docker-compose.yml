@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  master:
+    image: xausky/alluxio
+    command: master
+  worker:
+    image: xausky/alluxio
+    environment:
+      - ALLUXIO_MASTER_HOSTNAME=master
+    command: worker
+networks:
+  default:
+    external:
+      name: main
